@@ -5,6 +5,8 @@ import 'package:food_delivery/widgets/nearby_restaurants.dart';
 import 'package:food_delivery/widgets/recent_orders.dart';
 import 'package:food_delivery/widgets/search_input.dart';
 
+import 'cart_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -23,7 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Food Delivery'),
         actions: [
           FlatButton(
-            onPressed: null,
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => CartScreen()),
+            ),
             child: Text(
               'Cart (${currentUser.cart.length})',
               style: TextStyle(
